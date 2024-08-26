@@ -10,8 +10,12 @@ import java.util.List;
 
 @RestController
 public class MovieController {
-    @Autowired
     private MovieRepo movieRepo;
+    @Autowired
+    public MovieController(MovieRepo movieRepo){
+        this.movieRepo = movieRepo;
+    }
+
 
     @GetMapping(value = "/movies")
     public List<Movie> GetMovies(){
