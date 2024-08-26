@@ -17,14 +17,14 @@ import org.springframework.stereotype.Component;
 public class Movie {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private long MovieId;
+    private long movieid;
     @Column
-    private String MovieName;
+    private String moviename;
     @Column
 
-    private String MovieProduced;
+    private String movieproduced;
     @Column
-    private String MovieReview;
+    private String moviereview;
 
 
 }
