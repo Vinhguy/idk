@@ -1,10 +1,10 @@
 package com.Movieweb.Controller;
 
-import com.Movieweb.DTO.MovieDTO;
+import com.Movieweb.DTO.UserCreationRequest;
 import com.Movieweb.Models.Movie;
-import com.Movieweb.Repository.MovieRepo;
 import com.Movieweb.Services.MovieService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -14,8 +14,30 @@ public class MovieController {
     @Autowired
     private MovieService movieService;
 
-    @PostMapping(value = "/Movies")
-    public Movie createMovie(@RequestBody MovieDTO request){
-        MovieService.createUser(request);
+    @PostMapping(value = "/newMovie")
+     public Movie createMovie(@RequestBody UserCreationRequest request){
+        return movieService.createUser(request);
     }
+
+    @GetMapping(value = "/movies")
+    public List<Movie> getMovie(){
+        return movieService.getMovie();
+    }
+
+    @GetMapping(value = "/movies/{id}")
+    public Movie getMovie(@PathVariable long id){
+        return movieService.getMovie(id);
+    }
+
+    @PutMapping(value = "/update/{id}")
+    public Movie updateMovie(@PathVariable long id ,@RequestBody UserCreationRequest request){
+        return movieService.updateMovie(id,request);
+    }
+
+    @DeleteMapping(value = "delete/{id}")
+    public ResponseEntity<String> deleteMovie(@PathVariable long id) {
+        movieService.deleteMovie(id);
+        return ResponseEntity.ok("Deleted");
+    }
+
 }

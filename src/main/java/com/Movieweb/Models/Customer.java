@@ -18,6 +18,6 @@ public class Customer {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long CustomerId;
     @Column
-    private int CustomerName;
+    private String CustomerName;
 
 }
