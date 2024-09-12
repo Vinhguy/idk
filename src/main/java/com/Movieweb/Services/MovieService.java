@@ -26,6 +26,7 @@ public class MovieService {
         Movie movie = new Movie();
         if(movieRepo.existsByMoviename(request.getMoviename()))
             throw new RuntimeException("BOOM existed");
+
         movie.setMoviereview(request.getMoviereview());
         movie.setMovieproduced(request.getMovieproduced());
         movie.setMoviename(request.getMoviename());
