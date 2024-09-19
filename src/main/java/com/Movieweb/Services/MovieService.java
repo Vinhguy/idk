@@ -1,12 +1,12 @@
 package com.Movieweb.Services;
 
-import com.Movieweb.DTO.UserCreationRequest;
+import com.Movieweb.DTO.MovieCreationRequest;
+import com.Movieweb.Exception.ErrorCode;
+import com.Movieweb.Exception.MovieException;
 import com.Movieweb.Models.Movie;
 import com.Movieweb.Repository.MovieRepo;
-import org.apache.logging.log4j.LogManager;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import org.apache.logging.log4j.Logger;
 
 import java.util.List;
 
@@ -22,11 +22,10 @@ public class MovieService {
     }
 
 
-    public Movie createUser(UserCreationRequest request){
+    public Movie createUser(MovieCreationRequest request){
         Movie movie = new Movie();
         if(movieRepo.existsByMoviename(request.getMoviename()))
-            throw new RuntimeException("BOOM existed");
-
+            throw new MovieException(ErrorCode.USER_EXISTED);
         movie.setMoviereview(request.getMoviereview());
         movie.setMovieproduced(request.getMovieproduced());
         movie.setMoviename(request.getMoviename());
@@ -40,7 +39,7 @@ public class MovieService {
         return movieRepo.findById(id).orElseThrow(() -> new RuntimeException("User not found"));
     }
 
-    public Movie updateMovie(long id, UserCreationRequest request){
+    public Movie updateMovie(long id, MovieCreationRequest request){
         Movie movie = getMovie(id);
         movie.setMoviereview(request.getMoviereview());
         movie.setMovieproduced(request.getMovieproduced());

@@ -8,7 +8,7 @@ public class MovieWebApplication {
 
 	public static void main(String[] args) {
 
-		//SpringApplication.run(MovieWebApplication.class, args);
+		SpringApplication.run(MovieWebApplication.class, args);
 
 	}
 
