@@ -1,14 +1,15 @@
 package com.Movieweb.Controller;
 
-import com.Movieweb.DTO.ApiResponse;
-import com.Movieweb.DTO.MovieCreationRequest;
+import com.Movieweb.DTO.Requests.ApiResponse;
+import com.Movieweb.DTO.Requests.MovieCreationRequest;
+import com.Movieweb.DTO.Response.MovieResponse;
 import com.Movieweb.Models.Movie;
 import com.Movieweb.Services.MovieService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.ArrayList;
 import java.util.List;
 
 @RestController
@@ -17,8 +18,8 @@ public class MovieController {
     private MovieService movieService;
 
     @PostMapping(value = "/newMovie")
-     public ApiResponse<Movie> createMovie(@RequestBody MovieCreationRequest request){
-        ApiResponse<Movie> apiResponse = new ApiResponse<>();
+     public ApiResponse<MovieResponse> createMovie(@RequestBody MovieCreationRequest request){
+        ApiResponse<MovieResponse> apiResponse = new ApiResponse<>();
         apiResponse.setResult(movieService.createUser(request));
         return apiResponse;
     }
@@ -27,7 +28,6 @@ public class MovieController {
     public List<Movie> getMovie(){
         return movieService.getMovie();
     }
-
     @GetMapping(value = "/movies/{id}")
     public Movie getMovie(@PathVariable long id){
         return movieService.getMovie(id);
@@ -43,4 +43,5 @@ public class MovieController {
         movieService.deleteMovie(id);
         return ResponseEntity.ok("Deleted");
     }
+
 }

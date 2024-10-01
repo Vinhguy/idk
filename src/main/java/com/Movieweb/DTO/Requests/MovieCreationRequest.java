@@ -1,4 +1,4 @@
-package com.Movieweb.DTO;
+package com.Movieweb.DTO.Requests;
 
 import lombok.Getter;
 import lombok.Setter;

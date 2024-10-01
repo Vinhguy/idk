@@ -1,4 +1,4 @@
-package com.Movieweb.DTO;
+package com.Movieweb.DTO.Requests;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import lombok.Getter;
