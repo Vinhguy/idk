@@ -2,25 +2,22 @@ package com.Movieweb.Models;
 
 
 import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import lombok.*;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.springframework.stereotype.Component;
 
-@NoArgsConstructor @AllArgsConstructor
-@Getter @Setter
-
+@NoArgsConstructor
+@AllArgsConstructor
 @Component
 @Entity
+@Data
 public class Customer {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private long CustomerId;
+    private long customerId;
     @Column
-    private String CustomerName;
+    private String customerName;
 
 
 

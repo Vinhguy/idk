@@ -6,7 +6,8 @@ import lombok.Setter;
 @Getter
 @Setter
 public class MovieCreationRequest {
-    private String moviename;
-    private String movieproduced;
-    private String moviereview;
+    private String movieName;
+    private String movieProduced;
+    private String movieReview;
 }
+

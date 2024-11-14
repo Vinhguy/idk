@@ -1,28 +1,25 @@
 package com.Movieweb.Models;
 
 import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import lombok.*;
 
+import lombok.experimental.FieldDefaults;
 import org.springframework.stereotype.Component;
 
 @NoArgsConstructor
 @AllArgsConstructor
-
 @Component
 @Entity
-@Getter
-@Setter
+@Data
+@FieldDefaults(level = AccessLevel.PRIVATE)
 public class Movie {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private long movieid;
+    long movieId;
     @Column
-    private String moviename;
+    String movieName;
     @Column
-    private String movieproduced;
+    String movieProduced;
     @Column
-    private String moviereview;
+    String movieReview;
 }
