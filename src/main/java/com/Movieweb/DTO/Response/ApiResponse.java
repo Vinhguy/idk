@@ -1,15 +1,14 @@
-package com.Movieweb.DTO.Requests;
+package com.Movieweb.DTO.Response;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import lombok.Getter;
 import lombok.Setter;
 
-import java.util.Date;
 @Getter
 @Setter
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class ApiResponse <T>{
-    private int code;
+    private int code; //http code
     private String message;
     private T result ;
 }

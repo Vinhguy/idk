@@ -8,9 +8,8 @@ import lombok.experimental.FieldDefaults;
 @AllArgsConstructor
 @Builder
 @FieldDefaults(level = AccessLevel.PRIVATE)
-public class MovieResponse {
-     long movieId;
-     String movieName;
-     String movieProduced;
-     String movieReview;
+public class EmployeeResponse {
+    long employeeId;
+    String employeeName;
+    String password;
 }

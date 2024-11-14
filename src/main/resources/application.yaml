@@ -2,7 +2,7 @@ spring:
   application:
     name: MovieWeb
   datasource:
-    url: "jdbc:mysql://localhost:3306/movieservice?useSSL=false&serverTimezone=UTC"
+    url: "jdbc:mysql://localhost:3306/movie_service?useSSL=false&serverTimezone=UTC"
     username: root
     password: choinhanh12
   server:
