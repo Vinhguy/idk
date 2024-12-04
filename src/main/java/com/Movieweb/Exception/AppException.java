@@ -1,14 +1,13 @@
 package com.Movieweb.Exception;
 
-import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.Setter;
 
 @Getter
 @Setter
-public class MovieException extends RuntimeException{
+public class AppException extends RuntimeException{
     private ErrorCode errorCode;
-    public MovieException(ErrorCode errorCode){
+    public AppException(ErrorCode errorCode){
         super(errorCode.getMessage());
         this.errorCode = errorCode;
     }

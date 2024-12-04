@@ -1,15 +1,15 @@
-package com.Movieweb.DTO.Response;
+package com.Movieweb.DTO.Requests;
 
 import lombok.*;
 import lombok.experimental.FieldDefaults;
+import org.hibernate.annotations.FetchProfile;
 
 @Data
+@Builder
 @NoArgsConstructor
 @AllArgsConstructor
-@Builder
 @FieldDefaults(level = AccessLevel.PRIVATE)
-public class EmployeeResponse {
-    long employeeId;
-    String employeeName;
+public class AuthenticationRequest {
+    String username;
     String password;
 }

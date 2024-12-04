@@ -19,6 +19,4 @@ public class Customer {
     @Column
     private String customerName;
 
-
-
 }
