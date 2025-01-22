@@ -15,11 +15,11 @@ public class GlobalExceptionHandler {
         return  ResponseEntity.badRequest().body(apiResponse);
     }
 
-    @ExceptionHandler(value = MovieException.class)
-    ResponseEntity<ApiResponse> handlingMovieException(MovieException movieException){
+    @ExceptionHandler(value = AppException.class)
+    ResponseEntity<ApiResponse> handlingMovieException(AppException appException){
         ApiResponse apiResponse = new ApiResponse();
-        apiResponse.setCode(movieException.getErrorCode().getCode());
-        apiResponse.setMessage(movieException.getMessage());
+        apiResponse.setCode(appException.getErrorCode().getCode());
+        apiResponse.setMessage(appException.getMessage());
         return ResponseEntity.badRequest().body(apiResponse);
     }
 
